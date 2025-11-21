@@ -17,3 +17,9 @@ wget https://github.com/RHOPKINS13/SteamDeckPokeMMOInstaller/raw/refs/heads/main
 After the script is finished, you should have a new entry for PokeMMO.sh in your Steam Library. Feel free to rename it to simply PokeMMO, and I would recommend using [SteamGridDB](https://www.steamgriddb.com/) and [SGDBoop](https://www.steamgriddb.com/boop) in order to add game art to the library entry.
 
 This script does **NOT** include the original Pokémon ROMs required to play the game. These must be **LEGALLY** dumped from your own legally purchased game cartridges. Please do not download pirated or "archived" ROMs of these 15+ year old games online, doing so is stealing from Nintendo's employee's children, you thoughtless brute!
+
+# Why use this script? Why not use the flatpak available on Flathub instead?
+Because sometimes when an update is released for PokeMMO, it can be a long time before the flatpak is updated. And lots of these updates tend to be for limited special events. The in-game updater doesn't work with the flatpak version, and this could leave you locked out of the game until the flatpak is updated, potentially missing time to enjoy a special event.
+
+# Special Thanks
+Special thanks goes to MajoraAKC from the PokeMMO forums. This script is based on the instructions that they posted [here](https://forums.pokemmo.com/index.php?/topic/149313-pokemmo-on-steamos-steam-deck/).
