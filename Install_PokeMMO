@@ -1,0 +1,25 @@
+#!/bin/bash
+
+GAMEDIR=~/Games/PokeMMO
+LINK_POKEMMO="https://pokemmo.com/download_file/1/"
+LINK_JDK="https://download.oracle.com/java/17/archive/jdk-17.0.9_linux-x64_bin.tar.gz"
+
+mkdir -p $GAMEDIR
+mkdir -p $GAMEDIR/java
+cd $GAMEDIR
+
+wget $LINK_POKEMMO -O PokeMMO-Client.zip
+wget $LINK_JDK -O java.tar.gz
+
+tar zxf java.tar.gz -C $GAMEDIR/java --strip-components=1
+unzip -q PokeMMO-Client.zip -d $GAMEDIR/PokeMMO
+
+head -n -1 $GAMEDIR/PokeMMO/PokeMMO.sh > $GAMEDIR/PokeMMO/PokeMMO.sh.new
+mv $GAMEDIR/PokeMMO/PokeMMO.sh.new $GAMEDIR/PokeMMO/PokeMMO.sh
+echo "cd $GAMEDIR/PokeMMO" >> $GAMEDIR/PokeMMO/PokeMMO.sh
+echo "export JAVA_HOME=../java" >> $GAMEDIR/PokeMMO/PokeMMO.sh
+echo "export PATH=\$PATH:\$JAVA_HOME/bin" >> $GAMEDIR/PokeMMO/PokeMMO.sh
+echo "java -Xmx384M $os_flags -Dfile.encoding=\"UTF-8\" -cp PokeMMO.exe com.pokeemu.client.Client" >> $GAMEDIR/PokeMMO/PokeMMO.sh
+
+chmod +x $GAMEDIR/PokeMMO/PokeMMO.sh
+steamos-add-to-steam $GAMEDIR/PokeMMO/PokeMMO.sh
